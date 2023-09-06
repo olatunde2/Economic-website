@@ -1,0 +1,21 @@
+{% extends 'schools/base.html' %}
+
+{% block title %}Students{% endblock %}
+
+{% load static %}
+
+{% static "schools/nav.css" %}
+
+{% block content %}
+    <h2>Students</h2>
+    <ul class="student-list">
+        {% for student in students %}
+        <div class="image-grid">
+            <div class="image-item"><img src="{{ student.pix.url }}"></div>
+        </div>
+            <li>
+                <h3><a href="{% url 'schools:student_detail' student.pk %}">{{ student.first_name }} {{ student.last_name }}</a></h3>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

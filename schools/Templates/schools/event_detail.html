@@ -1,0 +1,15 @@
+{% extends 'schools/base.html' %}
+
+{% block title %}{{ event.title }}{% endblock %}
+
+{% load static %}
+
+{% static "schools/nav.css" %}
+
+{% block content %}
+    <article class="event-detail">
+        <h2>{{ events.title }}</h2>
+        <p>{{ events.description }}</p>
+        <p>Date:{{ events.teacher }}</p>
+    </article>
+{% endblock %}

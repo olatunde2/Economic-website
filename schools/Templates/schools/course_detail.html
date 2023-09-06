@@ -1,0 +1,18 @@
+{% extends 'schools/base.html' %}
+
+{% block title %}{{ courses.title }}{% endblock %}
+
+{% load static %}
+
+
+
+{% block content %}
+    
+    <article class="course-detail">
+
+        <img src="{{ courses.images.url }}" height="150" width="150">
+        <h2>{{ courses.title }}</h2>
+        <p>{{ courses.description }}</p>
+        <p>Teachers:  {{ courses.teacher }}</p>
+    </article>
+{% endblock %}

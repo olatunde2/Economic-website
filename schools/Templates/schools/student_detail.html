@@ -1,0 +1,16 @@
+{% extends 'schools/base.html' %}
+
+{% block title %}{{ student.first_name }}{% endblock %}
+
+
+{% block content %}
+    <article class="student-detail">
+        <img src="{{ students.pix.url }}">
+        <h2>{{ students.first_name }} {{ students.last_name }}</h2>
+        <p>Courses:
+            {% for course in students.courses.all %}
+                <a href="{% url 'schools:course_detail' course.pk %}">{{ course.title }}</a>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+    </article>
+{% endblock %}
